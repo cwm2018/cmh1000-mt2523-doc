@@ -1,5 +1,5 @@
 # Summary
 
 * [Interduction](README.md)
-* [Virtual Sensor Sleeping Implementation](virsens_sleeping.md)
+* [Sleeping Virtual Sensor](content/virsens/virsens_sleeping.md)
 
