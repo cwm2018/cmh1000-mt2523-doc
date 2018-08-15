@@ -1,6 +1,5 @@
-
 ## Sleeping Implementation Statement
-
+<br>
 Sleeping virtual sensor was be activated; Host processor has to delivers `system power state` and `real time info` they are able to assist sleeping virtual sensor calculates data precisely.
 
 As below, the illustrated figure expresses sleeping virtual sensor ative working scenario.
