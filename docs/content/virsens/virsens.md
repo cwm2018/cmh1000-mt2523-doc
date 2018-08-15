@@ -4,25 +4,12 @@ Sleeping virtual sensor was be activated; Host processor has to delivers `system
 
 As below, the illustrated figure expresses sleeping virtual sensor ative working scenario.
 
-```mermaid
-sequenceDiagram
-Host Processor->>Sensor Hub:subscribe sleeping
-Note left of Host Processor: Deliver "real time info" in every 2 hours
-Host Processor->>Sensor Hub:"system time (day:time)"
-Note left of Host Processor: Device screen is on
-Host Processor->>Sensor Hub:"SYS_PWR_AWAKE"
-Note left of Host Processor: Device screen is off
-Host Processor->>Sensor Hub:"SYS_PWR_SUSPEND"
-Note left of Host Processor: Device is charging
-Host Processor->>Sensor Hub:"SYS_PWR_CHARGING"
-Note left of Host Processor: Device is discharging
-Host Processor->>Sensor Hub:"SYS_PWR_DISCHARGING"
-Note left of Host Processor: User is playing deivce
-Host Processor->>Sensor Hub:"SYS_PWR_OPERATION"
-Note left of Host Processor: Terminate sleeping process
-Host Processor->>Sensor Hub:"SYS_PWR_LEAVE_SLEEP"
-Host Processor->>Sensor Hub:unsubscribe sleeping
-```
+<br>
+<img src="virsens_sleeping_implementation.png"
+width="90%"
+height="90%"
+alt="virsens sleeping implementation"
+align=center />
 <br>
 
 + **System power state** delivers to sensor hub API
