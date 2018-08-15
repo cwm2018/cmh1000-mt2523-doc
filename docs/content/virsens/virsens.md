@@ -1,5 +1,5 @@
+## 
 ## Sleeping Implementation Statement
-<br>
 Sleeping virtual sensor was be activated; Host processor has to delivers `system power state` and `real time info` they are able to assist sleeping virtual sensor calculates data precisely.
 
 As below, the illustrated figure expresses sleeping virtual sensor ative working scenario.
@@ -44,3 +44,5 @@ sensor_manager_setSensorParameters(SENSOR_TYPE_SLEEPING,
  sensor_manager_setSensorParameters(SENSOR_TYPE_SLEEPING,
      &params, (sizeof(enum sensorhub_cmd_t)+sizeof(struct system_time_t)));
 ```
+
+
