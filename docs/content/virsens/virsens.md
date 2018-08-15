@@ -6,8 +6,8 @@ As below, the illustrated figure expresses sleeping virtual sensor ative working
 
 <br>
 <img src="virsens_sleeping_implementation.png"
-width="90%"
-height="90%"
+width="70%"
+height="70%"
 alt="virsens sleeping implementation"
 align=center />
 <br>
