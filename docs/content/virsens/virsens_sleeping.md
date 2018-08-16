@@ -1,8 +1,10 @@
-## Sleeping Implementation Statement
+## Sleeping Virtual Sensor Implementation Statement
 
-Sleeping virtual sensor was be activated; Host processor has to delivers `system power state` and `real time info` they are able to assist sleeping virtual sensor calculates data precisely.
+**Sleeping virtual sensor** refers `activity recongination virtual sensor` status, system `power state` and system `real time info`;
+they are able to assist sleeping virtual sensor calculates data precisely. Before activating **sleeping virtual sensor**, Host processor
+first subscribes `activity recongination virtual sensor`, then deliver system `power state` and `real time info`.
 
-As below, the illustrated figure expresses sleeping virtual sensor ative working scenario.
+For instance, the illustrated figure expresses sleeping virtual sensor ative working scenario.
 
 <br>
 <img src="virsens_sleeping_implementation.png"
@@ -12,7 +14,7 @@ alt="virsens sleeping implementation"
 align=center />
 <br>
 
-+ **System power state** delivers to sensor hub API
++ Host processor delivers **system power state** to sensor hub API
 
 ```text
 typedef enum {
@@ -21,7 +23,7 @@ typedef enum {
   SYS_PWR_CHARGING,     /*Device is charging via USB cable*/
   SYS_PWR_DISCHARGING,  /*Device is discharging*/
   SYS_PWR_OPERATION,    /*User is using device*/
-  SYS_PWR_LEAVE_SLEEP,  /*Host process requires sensor hub terminates sleeping processing*/
+  SYS_PWR_LEAVE_SLEEP,  /*Host processor requires sensor hub terminates sleeping processing*/
 } pwr_state_id_t;
 
 struct sensor_hub_sensor_params_t params;
@@ -33,7 +35,7 @@ sensor_manager_setSensorParameters(SENSOR_TYPE_SLEEPING,
     &params, (sizeof(enum sensorhub_cmd_t)+sizeof(uint32_t)));
 ```
 
-+ **Real time info** delivers to sensor hub API
++ Host processor delivers **real time info** to sensor hub API
 
 ```text
  struct system_time_t time;
@@ -44,5 +46,3 @@ sensor_manager_setSensorParameters(SENSOR_TYPE_SLEEPING,
  sensor_manager_setSensorParameters(SENSOR_TYPE_SLEEPING,
      &params, (sizeof(enum sensorhub_cmd_t)+sizeof(struct system_time_t)));
 ```
-## 
-## 
